@@ -7,6 +7,7 @@ The seed also provides a setup file that will take care of installing all the de
 
 ## Installation
 `git clone git@github.com:GlobantMobile/angular-seed.git`
+
 `./setup.sh`  
 
 
