@@ -6,11 +6,7 @@ The seed contains AngularJS libraries, along some AngularJS plugins. It also con
 The seed also provides a setup file that will take care of installing all the dependencies for the seed to run.
 
 ## Installation
-`git clone git@github.com:GlobantMobile/angular-seed.git`  
-`rm -rf .git`  
-`git init`  
-`git add .`  
-`git commit -m 'initial commit'`  
+`git clone git@github.com:GlobantMobile/angular-seed.git`
 `./setup.sh`  
 
 
@@ -40,4 +36,8 @@ https://github.com/GlobantMobile/angular-seed/wiki
 6. Code separated into three main directories: feateures/, common/, core/
 
 ## Examples
+<<<<<<< HEAD
 ### [v0.2.0](https://github.com/GlobantMobile/angular-seed-examples)
+=======
+### [v0.2.0](https://github.com/GlobantMobile/angular-seed-examples)
+>>>>>>> 94a65c62a7f2d39e0ba922fb9424c67b8fa1feee

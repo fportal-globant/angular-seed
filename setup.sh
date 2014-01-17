@@ -14,4 +14,5 @@ install_npm_module_globally grunt-cli
 npm install
 
 #instal bower components
-bower install
+
+bower install --allow-root
