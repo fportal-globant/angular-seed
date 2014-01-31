@@ -181,7 +181,10 @@ module.exports = function (grunt) {
         },
         jshint: {
             options: {
-                jshintrc: '.jshintrc'
+                jshintrc: '.jshintrc',
+                ignores: [
+                    'app/features/compiled_templates.js'
+                ]
             },
             all: [
                 'Gruntfile.js',
@@ -274,6 +277,18 @@ module.exports = function (grunt) {
                     '<%= config.dist %>/styles/bundle.css': [
                         '<%= config.app %>/styles/{,*/}*.css'
                     ]
+                }
+            }
+        },
+        ngtemplates: {
+            app: {
+                cwd: '<%= config.app %>/',
+                src: 'features/**/*.tpl',
+                dest: '<%= config.app %>/features/compiled_templates.js',
+                options: {
+                    source: function(source, url) {
+                        return '<!-- Template: ' + url + ' -->\n' + source;
+                    }
                 }
             }
         },
@@ -556,7 +571,7 @@ module.exports = function (grunt) {
         }
     });
 
-    grunt.loadTasks('grunt-tasks');
+    grunt.loadTasks('grunt-tasks','grunt-angular-templates');
 
     grunt.registerTask('server', function (target) {
         if (target === 'dist') {
@@ -568,6 +583,7 @@ module.exports = function (grunt) {
             'compass:dev',
             'csslint',
             'concat:cssDev',
+            'ngtemplates',
             'clean:devCss',
             'clean:server',
             // 'concurrent:server',
@@ -597,6 +613,7 @@ module.exports = function (grunt) {
         'clean:dist',
         'compass:dist',
         'clean:devCss',
+        'ngtemplates',
         'useminPrepare',
         'concurrent:dist',
         'concat',
