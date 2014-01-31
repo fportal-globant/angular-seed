@@ -167,6 +167,7 @@ module.exports = function (grunt) {
                 '<%= config.app %>/common/directives/views/*.html'
             ],
             devImages: ['<%= config.tmp %>/images/{,*/}'],
+            ngtemplates : ['<%= config.app %>/features/compiled_templates.js'],
             server: {
                 files: [
                     {
@@ -583,6 +584,7 @@ module.exports = function (grunt) {
             'compass:dev',
             'csslint',
             'concat:cssDev',
+            'clean:ngtemplates',
             'ngtemplates',
             'clean:devCss',
             'clean:server',
@@ -613,6 +615,7 @@ module.exports = function (grunt) {
         'clean:dist',
         'compass:dist',
         'clean:devCss',
+        'clean:ngtemplates',
         'ngtemplates',
         'useminPrepare',
         'concurrent:dist',
